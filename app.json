@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "4you-flix",
-    "slug": "4you-flix",
+    "name": "films-stream-react-native",
+    "slug": "films-stream-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
