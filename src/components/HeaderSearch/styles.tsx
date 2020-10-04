@@ -11,21 +11,10 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
         height: 50,
     },
-    logo: {
-        width: 27,
-        height: 27,
+    buttonIcon: {
+        paddingRight: 15,
     },
-    title: {
+    formInput: {
         flex: 1,
-        alignContent: 'flex-start',
-        fontFamily: 'font-gothic',
-        fontSize: 34,
-        marginLeft: 4,
-    },
-    subtitle1: {
-        color: colors.dark_gray,
-    },
-    subtitle2: {
-        color: colors.main_color,
     },
 })

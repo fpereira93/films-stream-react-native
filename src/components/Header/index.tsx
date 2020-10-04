@@ -1,27 +1,18 @@
 import * as React from 'react'
 import { Image, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { colors } from '../../constants/colors'
-import { ParamsHeader } from '../../types/Header'
 import styles from './styles'
+import { ParamsHeader } from './types'
 
 const Header: React.FC<ParamsHeader> = (params: ParamsHeader) => {
     if (!params.headerShown) {
         return null
     }
 
-    const insets = useSafeAreaInsets()
-
-    const styleContainer = {
-        marginTop: insets.top,
-        marginBottom: insets.bottom,
-        ...styles.container,
-    }
-
     return (
-        <View style={styleContainer}>
+        <View style={styles.container}>
             <Image source={require('../../assets/logo.png')} style={styles.logo} />
 
             <Text style={styles.title}>
@@ -29,7 +20,7 @@ const Header: React.FC<ParamsHeader> = (params: ParamsHeader) => {
             </Text>
 
             <TouchableOpacity activeOpacity={0.7} onPress={params.onClickSearch}>
-                <MaterialCommunityIcons name="magnify" color={colors.action_element.inactive} size={25} />
+                <MaterialCommunityIcons name="magnify" color={colors.dark_gray} size={25} />
             </TouchableOpacity>
         </View>
     )

@@ -8,14 +8,14 @@ const labelStyle: StyleProp<TextStyle> = {
 
 const style: StyleProp<ViewStyle> = {
     borderWidth: 0,
-    backgroundColor: colors.background,
-    borderTopColor: colors.background,
+    backgroundColor: colors.white,
+    borderTopColor: colors.white,
 }
 
 export const tabBarOptions = {
     keyboardHidesTabBar: true,
-    activeTintColor: colors.action_element.active,
-    inactiveTintColor: colors.action_element.inactive,
+    activeTintColor: colors.main_color,
+    inactiveTintColor: colors.dark_gray,
     style,
     labelStyle,
 }

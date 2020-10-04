@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Text, View } from 'react-native'
-import { PropsMovieNavigator } from '../../types/Route/movie-screen'
+import { PropsMovieNavigator } from '../../routes/types'
 
 const MovieListScreen: React.FC<PropsMovieNavigator> = (props: PropsMovieNavigator) => {
     // eslint-disable-next-line no-unused-vars
