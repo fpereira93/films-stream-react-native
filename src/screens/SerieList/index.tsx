@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Text, View } from 'react-native'
-import { PropsReleaseNavigator } from '../../routes/types'
+import { PropsReleaseNavigator } from '../../routes/home-types'
 
 const SerieListScreen: React.FC<PropsReleaseNavigator> = (props: PropsReleaseNavigator) => {
     // eslint-disable-next-line no-unused-vars

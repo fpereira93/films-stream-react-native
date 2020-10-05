@@ -8,10 +8,10 @@ import HeaderSearch from '../../components/HeaderSearch'
 import { RootState } from '../../storage/reducers';
 import { fetchMovies } from '../../storage/actions'
 import { styles } from './styles';
-import { PropsHomeNavigator } from '../../routes/types';
 import { MovieItem } from '../../services/movie/types';
+import { PropsSearchsNavigator } from '../../routes/stack-types';
 
-interface PropsScreen extends PropsHomeNavigator, PropsFromRedux { }
+interface PropsScreen extends PropsSearchsNavigator, PropsFromRedux { }
 
 const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
     const { navigation } = props
@@ -25,7 +25,7 @@ const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
     }, [navigation])
 
     const onPressCardMovie = React.useCallback((movie: MovieItem) => {
-        console.log(movie);
+        navigation.navigate('MovieDetail', { movie })
     }, []);
 
     return (

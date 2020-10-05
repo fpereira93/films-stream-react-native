@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Text, View } from 'react-native'
-import { PropsHomeNavigator } from '../../routes/types'
+import { PropsHomeNavigator } from '../../routes/home-types'
 
 const HomeScreen: React.FC<PropsHomeNavigator> = (props: PropsHomeNavigator) => {
     // eslint-disable-next-line no-unused-vars

@@ -6,7 +6,7 @@ import HomeScreen from '../../screens/Home'
 import ReleaseListScreen from '../../screens/ReleaseList'
 import MovieListScreen from '../../screens/MovieList'
 import SerieListScreen from '../../screens/SerieList'
-import { RootStackParamList } from '../../routes/types'
+import { RootStackParamList } from '../../routes/home-types'
 
 const Tab = createBottomTabNavigator<RootStackParamList>()
 

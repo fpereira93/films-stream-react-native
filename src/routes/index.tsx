@@ -9,16 +9,33 @@ import HomeStackPage from '../../src/stacks/home'
 import SearchScreen from '../../src/screens/Search'
 import { setDisplayHeader } from '../../src/storage/actions'
 import { RootState } from '../../src/storage/reducers'
+import MovieDetailScreen from '../screens/MovieDetail'
+import { StackParamList } from './stack-types'
 
-const HomeStack = createStackNavigator()
+const HomeStack = createStackNavigator<StackParamList>()
 
 const StackScreens: React.FC = React.memo(() => {
     const screenOptions = { headerShown: false }
 
     return (
         <HomeStack.Navigator initialRouteName="HomeStack" screenOptions={screenOptions}>
-            <HomeStack.Screen options={{ animationEnabled: false }} name="HomeStack" component={HomeStackPage} />
-            <HomeStack.Screen options={{ animationEnabled: false }} name="Search" component={SearchScreen} />
+            <HomeStack.Screen
+                options={{ animationEnabled: false }}
+                name="HomeStack"
+                component={HomeStackPage}
+            />
+
+            <HomeStack.Screen
+                options={{ animationEnabled: false }}
+                name="Search"
+                component={SearchScreen}
+            />
+
+            <HomeStack.Screen
+                options={{ animationEnabled: false }}
+                name="MovieDetail"
+                component={MovieDetailScreen}
+            />
         </HomeStack.Navigator>
     )
 })
