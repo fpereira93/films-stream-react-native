@@ -8,7 +8,9 @@ export interface MovieItem {
         value: number
     }
     genres: Array<string>
-    number_star: number
+    number_star: number,
+    number_view: number,
+    sinopse: string
 }
 
 export type ResultSearchMovies = Array<MovieItem>

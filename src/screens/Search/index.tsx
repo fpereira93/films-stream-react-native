@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { connect, ConnectedProps } from 'react-redux';
-import CardDetailSearch from '../../components/CardDetailSearch';
+import CardMovieDetail from '../../components/CardMovieDetail';
 import HeaderSearch from '../../components/HeaderSearch'
 import { RootState } from '../../storage/reducers';
 import { fetchMovies } from '../../storage/actions'
@@ -21,7 +21,6 @@ const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
     }, [navigation])
 
     const onChangeText = React.useCallback((text: string) => {
-        console.log('# Execution Search Movies', text)
         props.fetchMovies(text);
     }, [navigation])
 
@@ -36,7 +35,7 @@ const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
             <SafeAreaView style={styles.safeAreaView}>
                 <FlatList
                     data={props.movies}
-                    renderItem={(item: any) => <CardDetailSearch onPress={() => onPressCardMovie(item.item)} index={item.index} {...item.item} />}
+                    renderItem={(item: any) => <CardMovieDetail onPress={() => onPressCardMovie(item.item)} index={item.index} {...item.item} />}
                     keyExtractor={(item: any, index: number) => index.toString()}
                 />
             </SafeAreaView>

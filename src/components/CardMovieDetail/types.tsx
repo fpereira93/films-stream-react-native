@@ -1,5 +1,5 @@
 import { MovieItem } from "../../services/movie/types";
 
-export interface CardDetailSearchParams extends MovieItem {
+export interface CardMovieDetailParams extends MovieItem {
     onPress: () => void
 }

@@ -1,4 +1,4 @@
-import { CardDetailSearchParams } from "../../components/CardDetailSearch/types";
+import { CardDetailSearchParams } from "../../components/CardMovieDetail/types";
 import { SetDiscoveredMoviesAction, FetchMoviesAction, SET_DISCOVERED_MOVIES, FETCH_MOVIES } from "../types/actionFetchMoviesTypes";
 
 export const setDiscoveredMovies = (movies: Array<CardDetailSearchParams>): SetDiscoveredMoviesAction => ({
