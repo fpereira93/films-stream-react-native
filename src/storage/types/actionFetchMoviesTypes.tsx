@@ -1,3 +1,5 @@
+import { MovieItem } from "../../services/movie/types";
+
 export const SET_DISCOVERED_MOVIES = 'SET_DISCOVERED_MOVIES';
 export const ERROR_FETCH_MOVIES = 'ERROR_FETCH_MOVIES';
 export const FETCH_MOVIES = 'FETCH_MOVIES';

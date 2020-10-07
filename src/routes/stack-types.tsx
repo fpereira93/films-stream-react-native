@@ -3,11 +3,11 @@ import { StackNavigationProp } from "@react-navigation/stack"
 import { MovieItem } from "../services/movie/types"
 
 export type StackParamList = {
-    HomeStack: undefined,
-    Search: undefined,
+    HomeStack: undefined
+    Search: undefined
     MovieDetail: {
-        movie: MovieItem,
-    },
+        movie: MovieItem
+    }
 }
 
 // types "Home Stack"

@@ -1,74 +1,16 @@
 import * as React from 'react'
 import { View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { connect, ConnectedProps } from 'react-redux'
 import { createStackNavigator } from "@react-navigation/stack"
-import { NavigationContainer, NavigationContainerRef } from '@react-navigation/native'
-import Header from '../../src/components/Header'
+import { NavigationContainer } from '@react-navigation/native'
 import HomeStackPage from '../../src/stacks/home'
 import SearchScreen from '../../src/screens/Search'
-import { setDisplayHeader } from '../../src/storage/actions'
-import { RootState } from '../../src/storage/reducers'
 import MovieDetailScreen from '../screens/MovieDetail'
 import { StackParamList } from './stack-types'
 
 const HomeStack = createStackNavigator<StackParamList>()
 
-const StackScreens: React.FC = React.memo(() => {
-    const screenOptions = { headerShown: false }
-
-    return (
-        <HomeStack.Navigator initialRouteName="HomeStack" screenOptions={screenOptions}>
-            <HomeStack.Screen
-                options={{ animationEnabled: false }}
-                name="HomeStack"
-                component={HomeStackPage}
-            />
-
-            <HomeStack.Screen
-                options={{ animationEnabled: false }}
-                name="Search"
-                component={SearchScreen}
-            />
-
-            <HomeStack.Screen
-                options={{ animationEnabled: false }}
-                name="MovieDetail"
-                component={MovieDetailScreen}
-            />
-        </HomeStack.Navigator>
-    )
-})
-
-const getCurrentRouteName = (state: any): string | null => {
-    if (!state) {
-        return null
-    }
-
-    const route: any = state.routes[state.index]
-
-    if (route.routes) {
-        return getCurrentRouteName(route)
-    }
-
-    return route.name
-}
-
-const NavigatorScreens: React.FC<PropsFromRedux> = (props: PropsFromRedux) => {
-    const navigationRef: React.RefObject<NavigationContainerRef> = React.createRef();
-
-    React.useEffect(() => {
-        navigationRef.current?.addListener('state', (currentState) => {
-            const routeName = getCurrentRouteName(currentState.data.state)
-
-            props.setDisplayHeader(routeName === 'HomeStack')
-        })
-    }, [navigationRef.current])
-
-    const onClickSearch = () => {
-        navigationRef.current?.navigate('Search')
-    }
-
+const NavigatorScreens: React.FC = () => {
     const insets = useSafeAreaInsets()
 
     const styleContainer = {
@@ -77,25 +19,30 @@ const NavigatorScreens: React.FC<PropsFromRedux> = (props: PropsFromRedux) => {
         flex: 1,
     }
 
+    const screenOptions = { headerShown: false }
+
     return (
         <View style={styleContainer}>
-            <NavigationContainer ref={navigationRef}>
-                <Header
-                    headerShown={props.displayHeader}
-                    onClickSearch={onClickSearch}
-                />
-                <StackScreens />
+            <NavigationContainer>
+                <HomeStack.Navigator initialRouteName="HomeStack" screenOptions={screenOptions}>
+                    <HomeStack.Screen
+                        name="HomeStack"
+                        component={HomeStackPage}
+                    />
+
+                    <HomeStack.Screen
+                        name="Search"
+                        component={SearchScreen}
+                    />
+
+                    <HomeStack.Screen
+                        name="MovieDetail"
+                        component={MovieDetailScreen}
+                    />
+                </HomeStack.Navigator>
             </NavigationContainer>
         </View>
     )
 }
 
-const mapStateToProps = (state: RootState) => ({
-    displayHeader: state.header.display,
-})
-
-const connector = connect(mapStateToProps, { setDisplayHeader })
-
-type PropsFromRedux = ConnectedProps<typeof connector>
-
-export default connector(NavigatorScreens);
+export default NavigatorScreens

@@ -7,10 +7,6 @@ import styles from './styles'
 import { ParamsHeader } from './types'
 
 const Header: React.FC<ParamsHeader> = (params: ParamsHeader) => {
-    if (!params.headerShown) {
-        return null
-    }
-
     return (
         <View style={styles.container}>
             <Image source={require('../../assets/logo.png')} style={styles.logo} />
@@ -26,4 +22,4 @@ const Header: React.FC<ParamsHeader> = (params: ParamsHeader) => {
     )
 }
 
-export default Header
+export default React.memo(Header)

@@ -7,6 +7,8 @@ import ReleaseListScreen from '../../screens/ReleaseList'
 import MovieListScreen from '../../screens/MovieList'
 import SerieListScreen from '../../screens/SerieList'
 import { RootStackParamList } from '../../routes/home-types'
+import Header from '../../components/Header'
+import { PropsSearchsNavigator } from '../../routes/stack-types'
 
 const Tab = createBottomTabNavigator<RootStackParamList>()
 
@@ -20,37 +22,47 @@ const getOptionsTabScreen = (label: string, iconName: string) => {
     }
 }
 
-const HomeStackPage: React.FC = () => {
+const HomeStackPage: React.FC<PropsSearchsNavigator> = (params: PropsSearchsNavigator) => {
+    const { navigation } = params
+
+    const onClickSearch = React.useCallback(() => {
+        navigation.navigate("Search")
+    }, []);
+
     return (
-        <Tab.Navigator
-            initialRouteName="Home"
-            tabBarOptions={tabBarOptions}
-        >
+        <>
+            <Header onClickSearch={onClickSearch} />
 
-            <Tab.Screen
-                name="Home"
-                component={HomeScreen}
-                options={getOptionsTabScreen('Home', 'home')}
-            />
+            <Tab.Navigator
+                initialRouteName="Home"
+                tabBarOptions={tabBarOptions}
+            >
 
-            <Tab.Screen
-                name="Releases"
-                component={ReleaseListScreen}
-                options={getOptionsTabScreen('Lançamentos', 'fire')}
-            />
+                <Tab.Screen
+                    name="Home"
+                    component={HomeScreen}
+                    options={getOptionsTabScreen('Home', 'home')}
+                />
 
-            <Tab.Screen
-                name="Movies"
-                component={MovieListScreen}
-                options={getOptionsTabScreen('Filmes', 'movie')}
-            />
+                <Tab.Screen
+                    name="Releases"
+                    component={ReleaseListScreen}
+                    options={getOptionsTabScreen('Lançamentos', 'fire')}
+                />
 
-            <Tab.Screen
-                name="Series"
-                component={SerieListScreen}
-                options={getOptionsTabScreen('Séries', 'filmstrip')}
-            />
-        </Tab.Navigator>
+                <Tab.Screen
+                    name="Movies"
+                    component={MovieListScreen}
+                    options={getOptionsTabScreen('Filmes', 'movie')}
+                />
+
+                <Tab.Screen
+                    name="Series"
+                    component={SerieListScreen}
+                    options={getOptionsTabScreen('Séries', 'filmstrip')}
+                />
+            </Tab.Navigator>
+        </>
     )
 }
 
