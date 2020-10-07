@@ -1,13 +1,13 @@
 import { ViewStyle } from "react-native";
 
-export interface IconParams {
+export interface IIconParams {
     name: string
     color?: string
     size?: number
 }
 
-export interface ButtonIconParams {
+export interface IButtonIconParams {
     onPress: () => void
-    icon: IconParams
+    icon: IIconParams
     style: ViewStyle
 }

@@ -1,3 +1,3 @@
-export interface ParamsHeader {
+export interface IParamsHeader {
     onClickSearch: () => void,
 }

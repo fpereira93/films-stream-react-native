@@ -4,9 +4,9 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { colors } from '../../constants/colors'
 import styles from './styles'
-import { ParamsHeader } from './types'
+import { IParamsHeader } from './types'
 
-const Header: React.FC<ParamsHeader> = (params: ParamsHeader) => {
+const Header: React.FC<IParamsHeader> = (params: IParamsHeader) => {
     return (
         <View style={styles.container}>
             <Image source={require('../../assets/logo.png')} style={styles.logo} />

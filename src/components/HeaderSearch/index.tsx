@@ -3,9 +3,9 @@ import { View } from 'react-native'
 import ButtonIcon from '../ButtonIcon'
 import FormInput from '../FormInput'
 import styles from './styles'
-import { HeaderSearchParams } from './types'
+import { IHeaderSearchParams } from './types'
 
-const HeaderSearch: React.FC<HeaderSearchParams> = (params: HeaderSearchParams) => {
+const HeaderSearch: React.FC<IHeaderSearchParams> = (params: IHeaderSearchParams) => {
     return (
         <View style={styles.container}>
             <ButtonIcon

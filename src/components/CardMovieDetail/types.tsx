@@ -1,5 +1,5 @@
-import { MovieItem } from "../../services/movie/types";
+import { IMovieItem } from "../../services/movie/types";
 
-export interface CardMovieDetailParams extends MovieItem {
+export interface ICardMovieDetailParams extends IMovieItem {
     onPress: () => void
 }

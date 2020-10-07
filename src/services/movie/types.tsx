@@ -1,4 +1,4 @@
-export interface MovieItem {
+export interface IMovieItem {
     uriImage: string
     title: string
     year: number
@@ -13,4 +13,4 @@ export interface MovieItem {
     sinopse: string
 }
 
-export type ResultSearchMovies = Array<MovieItem>
+export type ResultSearchMovies = Array<IMovieItem>

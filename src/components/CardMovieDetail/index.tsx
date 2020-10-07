@@ -8,9 +8,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { fontSizeResponsive, width } from '../../ultils/dimensions'
 import styles from './styles'
 import { colors } from '../../constants/colors'
-import { CardMovieDetailParams } from './types'
+import { ICardMovieDetailParams } from './types'
 
-const CardMovieDetail: React.FC<CardMovieDetailParams> = (params: CardMovieDetailParams) => {
+const CardMovieDetail: React.FC<ICardMovieDetailParams> = (params: ICardMovieDetailParams) => {
     const [expandSinopse, setExpandSinopse] = React.useState(false)
 
     const renderLineGradient = () => {

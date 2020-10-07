@@ -3,9 +3,9 @@ import { NativeSyntheticEvent, TextInput, TextInputChangeEventData, View } from 
 import { colors } from "../../constants/colors"
 import ButtonIcon from '../ButtonIcon'
 import styles from './styles'
-import { FormInputParams } from './types'
+import { IFormInputParams } from './types'
 
-const FormInput: React.FC<FormInputParams> = (params: FormInputParams) => {
+const FormInput: React.FC<IFormInputParams> = (params: IFormInputParams) => {
     const [value, setValue] = React.useState('')
     const [visibleClear, setVisibleClear] = React.useState(false)
 

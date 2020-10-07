@@ -1,12 +1,12 @@
 import { RouteProp } from "@react-navigation/native"
 import { StackNavigationProp } from "@react-navigation/stack"
-import { MovieItem } from "../services/movie/types"
+import { IMovieItem } from "../services/movie/types"
 
 export type StackParamList = {
     HomeStack: undefined
     Search: undefined
     MovieDetail: {
-        movie: MovieItem
+        movie: IMovieItem
     }
 }
 

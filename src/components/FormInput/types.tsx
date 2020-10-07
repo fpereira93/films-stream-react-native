@@ -1,6 +1,6 @@
 import { ViewStyle } from "react-native";
 
-export interface FormInputParams {
+export interface IFormInputParams {
     style?: ViewStyle
     placeholder?: string
     // eslint-disable-next-line no-unused-vars

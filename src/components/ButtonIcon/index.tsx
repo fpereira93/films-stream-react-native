@@ -3,9 +3,9 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { colors } from '../../constants/colors'
 import styles from './styles'
-import { ButtonIconParams } from './types'
+import { IButtonIconParams } from './types'
 
-const ButtonIcon: React.FC<ButtonIconParams> = (params: ButtonIconParams) => {
+const ButtonIcon: React.FC<IButtonIconParams> = (params: IButtonIconParams) => {
     const colorIcon = params.icon.color ?? colors.dark_gray
     const sizeIcon = params.icon.size ?? 25
 

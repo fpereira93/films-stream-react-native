@@ -3,7 +3,7 @@ import { Text, View } from 'react-native'
 
 import { styles } from './styles'
 import { PropsMovieDetailNavigator } from '../../routes/stack-types'
-import { MovieItem } from '../../services/movie/types'
+import { IMovieItem } from '../../services/movie/types'
 
 interface PropsScreen extends PropsMovieDetailNavigator { }
 
@@ -11,7 +11,7 @@ const MovieDetailScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
     // eslint-disable-next-line no-unused-vars
     const { navigation, route } = props
 
-    const film1: MovieItem = {
+    const film1: IMovieItem = {
         title: 'Bright',
         uriImage: 'https://movieplayer.net-cdn.it/t/images/2017/12/20/bright_jpg_191x283_crop_q85.jpg',
         time: {

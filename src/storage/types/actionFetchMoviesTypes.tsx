@@ -1,32 +1,32 @@
-import { MovieItem } from "../../services/movie/types";
+import { IMovieItem } from "../../services/movie/types";
 
 export const SET_DISCOVERED_MOVIES = 'SET_DISCOVERED_MOVIES';
 export const ERROR_FETCH_MOVIES = 'ERROR_FETCH_MOVIES';
 export const FETCH_MOVIES = 'FETCH_MOVIES';
 
-export interface SetDiscoveredMoviesState {
+export interface ISetDiscoveredMoviesState {
     error: string
-    movies: Array<MovieItem>
+    movies: Array<IMovieItem>
 }
-export interface SetDiscoveredMoviesAction extends SetDiscoveredMoviesState {
+export interface ISetDiscoveredMoviesAction extends ISetDiscoveredMoviesState {
     type: typeof SET_DISCOVERED_MOVIES
 }
 
-export interface FetchMoviesState {
+export interface IFetchMoviesState {
     query: string
 }
-export interface FetchMoviesAction extends FetchMoviesState {
+export interface IFetchMoviesAction extends IFetchMoviesState {
     type: typeof FETCH_MOVIES
 }
 
-export interface ErrorFetchMoviesState {
+export interface IErrorFetchMoviesState {
     error: string
 }
-export interface ErrorFetchMoviesAction extends ErrorFetchMoviesState {
+export interface IErrorFetchMoviesAction extends IErrorFetchMoviesState {
     type: typeof ERROR_FETCH_MOVIES
 }
 
 export type SetDiscoveredMoviesTypes =
-    SetDiscoveredMoviesAction |
-    FetchMoviesAction |
-    ErrorFetchMoviesAction
+    ISetDiscoveredMoviesAction |
+    IFetchMoviesAction |
+    IErrorFetchMoviesAction
