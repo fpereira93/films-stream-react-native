@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native"
 import { colors } from "../../constants/colors"
+import { HEADER } from "../../ultils/dimensions"
 
 export default StyleSheet.create({
     container: {
@@ -9,7 +10,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        height: 50,
+        height: HEADER.height,
     },
     logo: {
         width: 27,

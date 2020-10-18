@@ -19,6 +19,9 @@ export default StyleSheet.create({
     image: {
         borderTopLeftRadius: valueRadius,
     },
+    imageBottomRadius: {
+        borderBottomLeftRadius: valueRadius,
+    },
     details: {
         paddingLeft: 10,
         paddingRight: 10,
@@ -31,7 +34,7 @@ export default StyleSheet.create({
         fontSize: fontSizeResponsive(3),
         color: colors.dark_gray,
     },
-    year_autor: {
+    date: {
         fontFamily: 'Montserrat-Medium',
         fontSize: fontSizeResponsive(2),
         color: colors.main_color,
@@ -50,7 +53,7 @@ export default StyleSheet.create({
         paddingRight: 3,
         borderColor: colors.dark_gray,
     },
-    types: {
+    genres: {
         fontFamily: 'Montserrat-Medium',
         fontSize: fontSizeResponsive(2),
         flex: 1,
@@ -62,19 +65,13 @@ export default StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
     },
-    containerViews: {
-        flex: 1,
-        flexDirection: "row",
-        justifyContent: "flex-end",
-    },
-    textViews: {
-        marginRight: 5,
-        fontSize: fontSizeResponsive(2),
-        textAlignVertical: "center",
-    },
-    imageViews: {
-        width: 17,
-        height: 17,
+    containerBottomRadius: {
+        marginLeft: 10,
+        marginRight: 10,
+        elevation: 5,
+        marginBottom: 10,
+        borderBottomLeftRadius: valueRadius,
+        borderBottomRightRadius: valueRadius,
     },
     containerSinopse: {
         flex: 1,
@@ -82,12 +79,6 @@ export default StyleSheet.create({
         justifyContent: "flex-end",
         borderTopWidth: 0.2,
         backgroundColor: colors.white,
-        marginLeft: 10,
-        elevation: 5,
-        marginRight: 10,
-        marginBottom: 10,
-        borderBottomLeftRadius: valueRadius,
-        borderBottomRightRadius: valueRadius,
     },
     textSinopse: {
         flex: 1,

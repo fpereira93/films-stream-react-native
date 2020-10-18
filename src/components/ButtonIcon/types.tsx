@@ -9,5 +9,6 @@ export interface IIconParams {
 export interface IButtonIconParams {
     onPress: () => void
     icon: IIconParams
-    style: ViewStyle
+    style?: ViewStyle
+    activeOpacity?: number
 }

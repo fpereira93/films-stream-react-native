@@ -8,11 +8,12 @@ import { IButtonIconParams } from './types'
 const ButtonIcon: React.FC<IButtonIconParams> = (params: IButtonIconParams) => {
     const colorIcon = params.icon.color ?? colors.dark_gray
     const sizeIcon = params.icon.size ?? 25
+    const activeOpacity = params.activeOpacity ?? 0.7
 
     return (
         <TouchableOpacity
             style={[styles.container, params.style]}
-            activeOpacity={0.7}
+            activeOpacity={activeOpacity}
             onPress={params.onPress}
         >
             <MaterialCommunityIcons name={params.icon.name} color={colorIcon} size={sizeIcon} />

@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Filipe\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/react-native-material-palette
+  C:\Program Files\nodejs\node.exe C:\Users\Filipe\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/react-native-parallax-scroll-view
 
 PATH: 
   C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenVPN\bin;C:\Program Files\nodejs\;C:\Users\Filipe\AppData\Local\Microsoft\WindowsApps;C:\Users\Filipe\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Filipe\composer;C:\Users\Filipe\AppData\Roaming\Composer\vendor\bin;C:\laragon\bin\php\php-7.1.14-Win32-VC14-x64;C:\Users\Filipe\AppData\Roaming\npm
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2freact-native-material-palette: Not found
+  Error: https://registry.yarnpkg.com/@types%2freact-native-parallax-scroll-view: Not found
       at Request.params.callback [as _callback] (C:\Users\Filipe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66975:18)
       at Request.self.callback (C:\Users\Filipe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140727:22)
       at Request.emit (events.js:315:20)
@@ -45,13 +45,13 @@ npm manifest:
       "@types/react-native-star-rating": "^1.1.1",
       "expo": "~38.0.8",
       "expo-font": "~8.2.1",
-      "expo-linear-gradient": "~8.2.1",
       "expo-status-bar": "^1.0.2",
       "react": "~16.11.0",
       "react-dom": "~16.11.0",
       "react-native": "^0.62",
       "react-native-gesture-handler": "~1.6.0",
-      "react-native-material-palette": "^0.1.0",
+      "react-native-image-header-scroll-view": "^0.10.3",
+      "react-native-parallax-scroll-view": "^0.21.3",
       "react-native-reanimated": "~1.9.0",
       "react-native-safe-area-context": "^3.1.8",
       "react-native-scalable-image": "^1.0.0",
@@ -3801,7 +3801,7 @@ Lockfile:
     dependencies:
       source-map "^0.7.3"
   
-  hoist-non-react-statics@^2.2.0, hoist-non-react-statics@^2.3.1:
+  hoist-non-react-statics@^2.3.1:
     version "2.5.5"
     resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
     integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
@@ -5670,19 +5670,24 @@ Lockfile:
       invariant "^2.2.4"
       prop-types "^15.7.2"
   
+  react-native-image-header-scroll-view@^0.10.3:
+    version "0.10.3"
+    resolved "https://registry.yarnpkg.com/react-native-image-header-scroll-view/-/react-native-image-header-scroll-view-0.10.3.tgz#1de117fc6a8735aa345a8e6d3bf22f45c4c41742"
+    integrity sha512-5eYNcnZA8Q3jdi/uAIuKvsVg6xg9XNLwF8Bgb7ePtAMVOS5WQgJwgewCNWm191HQ+uLYq35B2wNkFK5rUPYZCw==
+    dependencies:
+      prop-types "^15.6.0"
+  
   react-native-iphone-x-helper@^1.2.1:
     version "1.2.1"
     resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
     integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
   
-  react-native-material-palette@^0.1.0:
-    version "0.1.0"
-    resolved "https://registry.yarnpkg.com/react-native-material-palette/-/react-native-material-palette-0.1.0.tgz#482753a7f186528633a5b20e0fedfe59176155c6"
-    integrity sha1-SCdTp/GGUoYzpbIOD+3+WRdhVcY=
+  react-native-parallax-scroll-view@^0.21.3:
+    version "0.21.3"
+    resolved "https://registry.yarnpkg.com/react-native-parallax-scroll-view/-/react-native-parallax-scroll-view-0.21.3.tgz#d956ad224ce3b0a2725b80574bcbf688bbeda14e"
+    integrity sha512-oVbZPijNGYGcpU2z7k/ZOOnl0vYxch7qtVvaJpH4+wLVnEP49NC2diCzjFGz8PE0yEcgyeTdkpdUK8RTD3QEew==
     dependencies:
-      hoist-non-react-statics "^2.2.0"
-      lodash "^4.17.4"
-      prop-types "^15.5.10"
+      prop-types "^15.6.0"
   
   react-native-reanimated@~1.9.0:
     version "1.9.0"

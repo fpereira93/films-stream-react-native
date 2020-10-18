@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { View, VirtualizedList } from 'react-native'
-import { FlatList } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { connect, ConnectedProps } from 'react-redux';
 import CardMovieDetail from '../../components/CardMovieDetail';
@@ -26,7 +25,7 @@ const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
 
     const onPressCardMovie = React.useCallback((movie: IMovieItem) => {
         navigation.navigate('MovieDetail', { movie })
-    }, []);
+    }, [props.movies]);
 
     const getItemCount = React.useCallback(() => {
         return props.movies.length
@@ -43,13 +42,13 @@ const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
             <SafeAreaView style={styles.safeAreaView}>
                 <VirtualizedList
                     data={props.movies}
-                    initialNumToRender={5}
+                    initialNumToRender={10}
+                    windowSize={30}
                     renderItem={(toRender: any) => {
                         return (
                             <CardMovieDetail
-                                onPress={() => onPressCardMovie(toRender.item)}
-                                index={toRender.index}
-                                {...toRender.item}
+                                onPress={onPressCardMovie}
+                                movie={toRender.item}
                             />
                         )
                     }}
@@ -57,11 +56,6 @@ const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
                     getItemCount={getItemCount}
                     getItem={getItem}
                 />
-                {/* <FlatList
-                    data={props.movies}
-                    renderItem={(item: any) => <CardMovieDetail onPress={() => onPressCardMovie(item.item)} index={item.index} {...item.item} />}
-                    keyExtractor={(item: any, index: number) => index.toString()}
-                /> */}
             </SafeAreaView>
         </View>
     )

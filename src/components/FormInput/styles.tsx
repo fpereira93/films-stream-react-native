@@ -5,7 +5,7 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         height: 32,
-        backgroundColor: colors.medium_gray,
+        backgroundColor: colors.light_gray,
         flexDirection: "row",
     },
     input: {

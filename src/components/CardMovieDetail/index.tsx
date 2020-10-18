@@ -1,10 +1,11 @@
 import * as React from 'react'
-import { Text, View, Image as ReactImage } from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient'
+import { Text, View } from 'react-native'
 import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import Image from 'react-native-scalable-image'
 import StarRating from 'react-native-star-rating'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { LinearGradient } from 'expo-linear-gradient'
 import { fontSizeResponsive, width } from '../../ultils/dimensions'
 import styles from './styles'
 import { colors } from '../../constants/colors'
@@ -43,62 +44,98 @@ const CardMovieDetail: React.FC<ICardMovieDetailParams> = (params: ICardMovieDet
         return null
     }
 
+    const hasSinopse = (): boolean => {
+        if (params.movie.sinopse && params.movie.sinopse.length) {
+            return true;
+        }
+
+        return false;
+    }
+
+    const onPressCard = React.useCallback(() => {
+        params.onPress(params.movie)
+    }, [params.onPress]);
+
     return (
         <>
-            <TouchableOpacity activeOpacity={0.8} onPress={params.onPress} style={styles.infoMovie}>
+            <TouchableOpacity
+                activeOpacity={0.8}
+                onPress={onPressCard}
+                style={[
+                    styles.infoMovie,
+                    !hasSinopse() ? styles.containerBottomRadius : null,
+                ]}
+            >
                 <Image
-                    source={{ uri: params.uriImage }}
+                    source={{ uri: params.movie.uriImage }}
                     width={width * 0.25}
-                    style={styles.image}
+                    style={[
+                        styles.image,
+                        !hasSinopse() ? styles.imageBottomRadius : null,
+                    ]}
                 />
+
                 <View style={styles.details}>
                     <Text style={styles.title}>
-                        {params.title}
+                        {params.movie.title}
                     </Text>
 
-                    <Text style={styles.year_autor}>
-                        {params.year}, {params.autor}
-                    </Text>
+                    {
+                        params.movie.date ? (
+                            <Text style={styles.date}>
+                                {params.movie.date}
+                            </Text>
+                        ) : null
+                    }
 
-                    <View style={styles.container_time}>
-                        <Text style={styles.time}>
-                            {params.time.value} {params.time.unit}
-                        </Text>
-                    </View>
+                    {
+                        params.movie.time ? (
+                            <View style={styles.container_time}>
+                                <Text style={styles.time}>
+                                    {params.movie.time.value} {params.movie.time.unit}
+                                </Text>
+                            </View>
+                        ) : null
+                    }
 
-                    <Text style={styles.types}>
-                        {params.genres.join(', ')}
+                    <Text style={styles.genres}>
+                        {params.movie.genres.join(', ')}
                     </Text>
 
                     <View style={styles.containerFeedback}>
                         <StarRating
+                            iconSet="MaterialCommunityIcons"
+                            emptyStar="star-outline"
                             disabled={true}
                             maxStars={5}
-                            rating={params.number_star}
+                            rating={params.movie.number_star}
                             fullStarColor={colors.star_color_full}
                             emptyStarColor={colors.star_color_empty}
-                            starSize={fontSizeResponsive(2)}
+                            starSize={fontSizeResponsive(2.5)}
                             starStyle={{ marginRight: 5 }}
                         />
-                        <View style={styles.containerViews}>
-                            <Text style={styles.textViews}>{params.number_view}</Text>
-                            <ReactImage style={styles.imageViews} source={require('../../assets/icons/eyes.png')} />
-                        </View>
                     </View>
                 </View>
             </TouchableOpacity>
-            <TouchableWithoutFeedback onPress={() => setExpandSinopse(!expandSinopse)} style={styles.containerSinopse}>
-
-                { renderLineGradient() }
-
-                <Text style={[styles.textSinopse, expandSinopse ? styles.expandTextSinopse : styles.collapsedTextSinopse]}>
-                    {params.sinopse}
-                </Text>
-
-                { renderMaterialIconExpand() }
-            </TouchableWithoutFeedback>
+            {
+                hasSinopse() ? (
+                    <TouchableWithoutFeedback
+                        onPress={() => setExpandSinopse(!expandSinopse)}
+                        style={[
+                            styles.containerSinopse,
+                            styles.containerBottomRadius,
+                        ]}
+                    >
+                        { renderLineGradient() }
+                        <Text style={[styles.textSinopse, expandSinopse ? styles.expandTextSinopse : styles.collapsedTextSinopse]}>
+                            {params.movie.sinopse}
+                        </Text>
+                        { renderMaterialIconExpand() }
+                    </TouchableWithoutFeedback>
+                ) : null
+            }
         </>
     )
 }
 
-export default CardMovieDetail;
+export default React.memo(CardMovieDetail)

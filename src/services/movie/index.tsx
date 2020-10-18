@@ -1,60 +1,96 @@
-import { ResultSearchMovies, IMovieItem } from "./types"
+import movies from '../database/movie.json'
+import seasons from '../database/season.json'
+import episodes from '../database/episode.json'
+import { IMovieItem, ResultSearchMovies } from './types'
 
-const film1: IMovieItem = {
-    title: 'Bright',
-    uriImage: 'https://movieplayer.net-cdn.it/t/images/2017/12/20/bright_jpg_191x283_crop_q85.jpg',
-    time: {
-        value: 139,
-        unit: 'min',
-    },
-    autor: 'David Ayer',
-    year: 2017,
-    genres: ['Action', 'Crime', 'Fantasy'],
-    number_star: 1,
-    number_view: 4,
-    sinopse: 'Set in a world where fantasy creatures live side by side with humans.'
-    + 'A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.'
-    + 'Set in a world where fantasy creatures live side by side with humans.'
-    + 'A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.',
+const seasonsMapping: any = {}
+const episodesMapping: any = {}
+
+seasons.forEach((season) => {
+    if (!seasonsMapping[season.id_movie]) {
+        seasonsMapping[season.id_movie] = [];
+    }
+
+    seasonsMapping[season.id_movie].push(season);
+});
+
+episodes.forEach((episode) => {
+    if (!episodesMapping[episode.id_serie_season]) {
+        episodesMapping[episode.id_serie_season] = [];
+    }
+    episodesMapping[episode.id_serie_season].push(episode);
+});
+
+const formatDuration = (input: string | null) => {
+    if (!input) {
+        return null;
+    }
+
+    const temp = input.split(' ')
+
+    return {
+        value: +temp[0],
+        unit: temp[1].replace('.', ''),
+    }
 }
 
-const film2: IMovieItem = {
-    title: 'Tomb Raider',
-    uriImage: 'https://mr.comingsoon.it/imgdb/locandine/235x336/53750.jpg',
-    time: {
-        value: 140,
-        unit: 'min',
-    },
-    autor: 'David Ayer',
-    year: 2004,
-    genres: ['Action', 'Crime', 'Fantasy', 'Commedy'],
-    number_star: 5,
-    number_view: 27,
-    sinopse: 'Lara Croft, the fiercely independent daughter of a missing adventurer, '
-    + 'must push herself beyond her limits when she finds herself on the island where her father disappeared.',
+const getEpisodesBySeason = (id_serie_season: any) => {
+    const episodes_find: any = episodesMapping[id_serie_season];
+
+    if (!episodes_find) {
+        return [];
+    }
+
+    return episodes_find.map((episode: any) => {
+        return {
+            name: episode.name,
+            uriImage: episode.url_image,
+            uriVideo: episode.url_film,
+        }
+    })
 }
 
-const film3: IMovieItem = {
-    title: 'Black Panther',
-    uriImage: 'https://mr.comingsoon.it/imgdb/locandine/235x336/53715.jpg',
-    time: {
-        value: 1,
-        unit: 'hour',
-    },
-    autor: 'Ryan Coogler',
-    year: 2018,
-    genres: ['Action', 'Adventure', 'Sci-Fi'],
-    number_star: 3,
-    number_view: 100,
-    sinopse: "T'Challa, the King of Wakanda, rises to the throne in the isolated, technologically"
-    + "advanced African nation, but his claim is challenged by a vengeful outsider who was a childhood victim of T'Challa's father's mistake.",
+const getSeasonsByMovie = (id_movie: any) => {
+    const seasons_find = seasonsMapping[id_movie];
+
+    if (!seasons_find) {
+        return [];
+    }
+
+    return seasons_find.map((season: any) => {
+        return {
+            name: season.name,
+            episodes: getEpisodesBySeason(season.id),
+        }
+    })
 }
 
-const results: Array<IMovieItem> = [
-    film1,
-    film2,
-    film3,
-]
+const getMovies = () => {
+    const formated = movies.map((movie: any) => {
+        return {
+            title: movie.name,
+            uriImage: movie.url_image,
+            uriVideo: movie.url_film,
+            time: formatDuration(movie.duration),
+            date: movie.date,
+            genres: [
+                'Action',
+                'Crime',
+                'Fantasy',
+            ],
+            number_star: movie.rating ? Math.round(movie.rating / 2) : null,
+            number_view: 50,
+            sinopse: movie.sinopse,
+            seasons: !movie.url_film
+                ? getSeasonsByMovie(movie.id)
+                : null,
+        }
+    })
+
+    return formated;
+}
+
+const results: Array<IMovieItem> = getMovies();
 
 export const searchMoviesService = (query: string): Promise<ResultSearchMovies> => {
     return new Promise((resolve, reject) => {
