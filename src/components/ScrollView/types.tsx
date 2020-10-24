@@ -1,5 +1,5 @@
 import React from 'react'
-import { NativeScrollEvent, NativeSyntheticEvent, ViewStyle } from "react-native"
+import { LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent, ViewStyle } from "react-native"
 import { ScrollView } from 'react-native-gesture-handler'
 
 export interface IScrollViewParams {

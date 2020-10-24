@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     },
     title: {
         color: colors.main_color,
-        // fontFamily: 'Montserrat-Medium',
+        fontFamily: 'Montserrat-Medium',
         fontSize: fontSizeResponsive(2.5),
         flex: 1,
     },

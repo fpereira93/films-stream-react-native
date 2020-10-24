@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text, View } from 'react-native'
+import { LayoutChangeEvent, Text, View, Animated } from 'react-native'
 import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import Image from 'react-native-scalable-image'
 import StarRating from 'react-native-star-rating'
@@ -12,7 +12,23 @@ import { colors } from '../../constants/colors'
 import { ICardMovieDetailParams } from './types'
 
 const CardMovieDetail: React.FC<ICardMovieDetailParams> = (params: ICardMovieDetailParams) => {
+    // console.log('# Render: CardMovieDetail')
+
     const [expandSinopse, setExpandSinopse] = React.useState(false)
+    const [heightSinopse, setHeightSinopse] = React.useState(0)
+
+    const fixedHeightSinopse = 30
+
+    const expanseValueSinopse = React.useRef(new Animated.Value(fixedHeightSinopse)).current
+
+    React.useEffect(() => {
+        Animated.timing(expanseValueSinopse, {
+            toValue: expandSinopse ? heightSinopse + 10 : fixedHeightSinopse,
+            duration: 150,
+            easing: (value: number) => value,
+            useNativeDriver: false,
+        }).start()
+    }, [expandSinopse])
 
     const renderLineGradient = () => {
         if (!expandSinopse) {
@@ -127,9 +143,23 @@ const CardMovieDetail: React.FC<ICardMovieDetailParams> = (params: ICardMovieDet
                         ]}
                     >
                         { renderLineGradient() }
-                        <Text style={[styles.textSinopse, expandSinopse ? styles.expandTextSinopse : styles.collapsedTextSinopse]}>
-                            {params.movie.sinopse}
-                        </Text>
+
+                        <Animated.View
+                            style={[
+                                styles.animatedTextSinopseContainer,
+                                { height: expanseValueSinopse },
+                            ]}
+                        >
+                            <Text
+                                style={styles.textSinopse}
+                                onLayout={(e: LayoutChangeEvent) => {
+                                    setHeightSinopse(e.nativeEvent.layout.height)
+                                }}
+                            >
+                                {params.movie.sinopse}
+                            </Text>
+                        </Animated.View>
+
                         { renderMaterialIconExpand() }
                     </TouchableWithoutFeedback>
                 ) : null

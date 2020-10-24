@@ -1,15 +1,14 @@
 import React from 'react'
-import { Text, Animated } from 'react-native'
+import { Text, Animated, Easing } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { colors } from '../../constants/colors'
-import { IEpisode } from '../../services/movie/types'
 import MovieDetailEpisodeList from '../MovieDetailEpisodeList'
 import styles, { HEIGHT_IMAGE_EPISODE } from './styles'
 import { IMovieDetailSeasonParams } from './types'
 
 const MovieDetailSeason: React.FC<IMovieDetailSeasonParams> = (props: IMovieDetailSeasonParams) => {
-    // console.log('# Render: MovieDetailSeason')
+    console.log('# Render: MovieDetailSeason', new Date())
 
     const [expansed, setExpansed] = React.useState(false)
     const [renderFirstTime, setRenderFirstTime] = React.useState(false)
@@ -46,12 +45,18 @@ const MovieDetailSeason: React.FC<IMovieDetailSeasonParams> = (props: IMovieDeta
         Animated.timing(expanseValue, {
             toValue: expansed ? newHeightCardSeason : 50,
             duration: 150,
-            easing: (value: number) => value,
+            easing: Easing.inOut(Easing.linear),
             useNativeDriver: false,
         }).start()
 
         if (expansed && !renderFirstTime) {
             setRenderFirstTime(true)
+        }
+
+        if (expansed && props.onExpand) {
+            props.onExpand()
+        } else if (!expansed && props.onCollapse) {
+            props.onCollapse()
         }
     }, [expansed])
 
@@ -59,20 +64,19 @@ const MovieDetailSeason: React.FC<IMovieDetailSeasonParams> = (props: IMovieDeta
         setExpansed(!expansed)
     }
 
-    const onPressEpisode = React.useCallback((episode: IEpisode) => {
-        console.log(episode)
-    }, [])
-
     const episodes = React.useMemo(() => {
         return props.season.episodes;
     }, [props.season.episodes])
 
     return (
-        <Animated.View style={[
-            styles.container,
-            props.style,
-            { height: expanseValue },
-        ]}>
+        <Animated.View
+            style={[
+                styles.container,
+                props.style,
+                { height: expanseValue },
+            ]}
+            onLayout={props.onLayoutTeste}
+        >
             <TouchableOpacity
                 style={styles.headerContainer}
                 onPress={toggleEpisodes}
@@ -95,7 +99,7 @@ const MovieDetailSeason: React.FC<IMovieDetailSeasonParams> = (props: IMovieDeta
                 (expansed || renderFirstTime) ? (
                     <MovieDetailEpisodeList
                         episodes={episodes}
-                        onPressEpisode={onPressEpisode}
+                        onPressEpisode={props.onPressEpisode}
                         heightImage={HEIGHT_IMAGE_EPISODE}
                     />
                 ) : null

@@ -74,23 +74,23 @@ export default StyleSheet.create({
         borderBottomRightRadius: valueRadius,
     },
     containerSinopse: {
-        flex: 1,
         flexDirection: 'column',
         justifyContent: "flex-end",
         borderTopWidth: 0.2,
         backgroundColor: colors.white,
     },
     textSinopse: {
-        flex: 1,
         marginTop: 5,
         marginLeft: 5,
         marginRight: 5,
         textAlign: "justify",
         fontFamily: 'Montserrat-Medium',
-        borderBottomLeftRadius: valueRadius,
-        borderBottomRightRadius: valueRadius,
         fontSize: fontSizeResponsive(1.8),
         color: colors.dark_gray,
+    },
+    animatedTextSinopseContainer: {
+        borderBottomLeftRadius: valueRadius,
+        borderBottomRightRadius: valueRadius,
     },
     linearGradientSinopse: {
         position: "absolute",
@@ -105,10 +105,10 @@ export default StyleSheet.create({
         alignSelf: "center",
         zIndex: 2,
     },
-    collapsedTextSinopse: {
-        maxHeight: 35,
-    },
-    expandTextSinopse: {
-        marginBottom: 5,
-    },
+    // collapsedTextSinopse: {
+    //     maxHeight: 35,
+    // },
+    // expandTextSinopse: {
+    //     marginBottom: 5,
+    // },
 })

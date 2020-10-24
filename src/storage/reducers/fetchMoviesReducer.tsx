@@ -7,6 +7,8 @@ const INITIAL_STATE: ISetDiscoveredMoviesState = {
 
 const fetchMovieReducer = (state = INITIAL_STATE, action: SetDiscoveredMoviesTypes): ISetDiscoveredMoviesState => {
     switch (action.type) {
+    case "CLEAR_DISCOVERED_MOVIES":
+        return { movies: [], error: '' }
     case "SET_DISCOVERED_MOVIES":
         return { movies: action.movies, error: '' }
     case "ERROR_FETCH_MOVIES":

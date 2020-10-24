@@ -1,13 +1,10 @@
-import { ISetDiscoveredMoviesAction, IFetchMoviesAction, SET_DISCOVERED_MOVIES, FETCH_MOVIES } from "../types/actionFetchMoviesTypes";
-import { ICardMovieDetailParams } from "../../components/CardMovieDetail/types";
-
-export const setDiscoveredMovies = (movies: Array<ICardMovieDetailParams>): ISetDiscoveredMoviesAction => ({
-    type: SET_DISCOVERED_MOVIES,
-    error: '',
-    movies,
-})
+import { IFetchMoviesAction, IClearFetchMoviesAction, FETCH_MOVIES, CLEAR_DISCOVERED_MOVIES } from "../types/actionFetchMoviesTypes";
 
 export const fetchMovies = (query: string): IFetchMoviesAction => ({
     type: FETCH_MOVIES,
     query,
+})
+
+export const clearFetchMovies = (): IClearFetchMoviesAction => ({
+    type: CLEAR_DISCOVERED_MOVIES,
 })

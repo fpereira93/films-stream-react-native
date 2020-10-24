@@ -1,4 +1,4 @@
-import { ViewStyle } from "react-native";
+import { LayoutChangeEvent, ViewStyle } from "react-native";
 import { IEpisode, ISeason } from "../../services/movie/types";
 
 export interface IMovieDetailSeasonParams {
@@ -6,4 +6,8 @@ export interface IMovieDetailSeasonParams {
     style?: ViewStyle
     // eslint-disable-next-line no-unused-vars
     onPressEpisode: (episode: IEpisode) => void
+    // eslint-disable-next-line no-unused-vars
+    onLayoutTeste?: (event: LayoutChangeEvent) => void
+    onExpand?: () => void
+    onCollapse?: () => void
 }
