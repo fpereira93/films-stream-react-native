@@ -105,10 +105,4 @@ export default StyleSheet.create({
         alignSelf: "center",
         zIndex: 2,
     },
-    // collapsedTextSinopse: {
-    //     maxHeight: 35,
-    // },
-    // expandTextSinopse: {
-    //     marginBottom: 5,
-    // },
 })

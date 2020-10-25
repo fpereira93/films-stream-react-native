@@ -137,6 +137,9 @@ const MovieDetailScreen: React.FC<PropsMovieDetailNavigator> = (props: PropsMovi
                 season={season}
                 key={index.toString()}
                 onPressEpisode={onPressEpisode}
+                onCollapse={React.useCallback(() => {
+                    setExpandIndexSeason(-1)
+                }, [season])}
                 onExpand={React.useCallback(() => {
                     setExpandIndexSeason(index)
                 }, [season])}
