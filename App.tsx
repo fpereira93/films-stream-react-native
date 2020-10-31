@@ -4,9 +4,9 @@ import createSagaMiddleware from 'redux-saga'
 import { applyMiddleware, createStore } from 'redux'
 import { useFonts } from '@expo-google-fonts/inter'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import NavigatorScreens from './src/routes'
 import { rootReducer } from './src/storage/reducers'
 import rootSaga from './src/storage/sagas'
-import NavigatorScreens from './src/routes'
 
 const sagaMiddleware = createSagaMiddleware()
 

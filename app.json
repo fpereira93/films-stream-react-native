@@ -1,32 +1,24 @@
 {
+  "name": "films-stream-react-native",
+  "displayName": "films-stream-react-native",
   "expo": {
     "name": "films-stream-react-native",
     "slug": "films-stream-react-native",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.demotemp.fpereira",
-      "buildNumber": "1.0.0"
-    },
-    "android": {
-        "package": "com.demotemp.fpereira",
-        "versionCode": 1
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+        "supportsTablet": true,
+        "bundleIdentifier": "com.demotemp.fpereira",
+        "buildNumber": "1.0.0"
+      },
+      "android": {
+          "package": "com.demotemp.fpereira",
+          "versionCode": 1
+      },
+      "web": {
+        "favicon": "./assets/favicon.png"
+      }
   }
 }
