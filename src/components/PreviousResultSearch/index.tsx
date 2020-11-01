@@ -8,7 +8,7 @@ import { colors } from '../../constants/colors'
 import ButtonIcon from '../ButtonIcon'
 
 const PreviousResultSearch: React.FC<IPreviousResultSearchParams> = (props: IPreviousResultSearchParams) => {
-    console.log('# Render: PreviousResultSearch')
+    // console.log('# Render: PreviousResultSearch')
 
     const getItemCount = React.useCallback(() => {
         return props.results.length

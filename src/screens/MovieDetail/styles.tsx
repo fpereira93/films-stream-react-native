@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { color } from "react-native-reanimated";
 import { colors } from "../../constants/colors";
 import { fontSizeResponsive, HEADER, height } from "../../ultils/dimensions";
 
@@ -154,6 +153,12 @@ const styles = StyleSheet.create({
         color: colors.dark_gray,
         textAlign: 'justify',
         fontFamily: 'Montserrat-Medium',
+    },
+    opacityBackgroundNameHeader: {
+        position: "absolute",
+        width: '100%',
+        height: '100%',
+        opacity: 0.5,
     },
 })
 

@@ -8,7 +8,7 @@ import styles, { HEIGHT_IMAGE_EPISODE } from './styles'
 import { IMovieDetailSeasonParams } from './types'
 
 const MovieDetailSeason: React.FC<IMovieDetailSeasonParams> = (props: IMovieDetailSeasonParams) => {
-    console.log('# Render: MovieDetailSeason', new Date())
+    // console.log('# Render: MovieDetailSeason')
 
     const [expansed, setExpansed] = React.useState(false)
     const [renderFirstTime, setRenderFirstTime] = React.useState(false)

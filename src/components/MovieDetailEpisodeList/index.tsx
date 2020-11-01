@@ -11,7 +11,7 @@ const MovieDetailEpisodeList: React.FC<IMovieDetailEpisodeListParams> = (props: 
     const onPressEpisode = (episode: IEpisode) => {
         return React.useCallback(() => {
             props.onPressEpisode(episode)
-        }, [])
+        }, [episode])
     }
 
     const styleEpisode = React.useMemo(() => {

@@ -45,7 +45,8 @@ const getEpisodesBySeason = (id_serie_season: any) => {
         return {
             name: episode.name,
             uriImage: episode.url_image,
-            uriVideo: episode.url_film,
+            // uriVideo: episode.url_film,
+            uriVideo: 'http://open.ryzer.site/s/02/4955/1x1.mp4',
         }
     })
 }

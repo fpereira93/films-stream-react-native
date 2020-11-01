@@ -23,6 +23,7 @@ import { fontSizeResponsive } from '../../ultils/dimensions'
 import { PropsMovieDetailNavigator } from '../../routes/stack-types'
 import MovieDetailSeason from '../../components/MovieDetailSeason'
 import { IEpisode, ISeason } from '../../services/movie/types'
+import VideoPlayerControll from '../../components/VideoPlayerControll'
 
 const MovieDetailScreen: React.FC<PropsMovieDetailNavigator> = (props: PropsMovieDetailNavigator) => {
     // console.log('# Render: MovieDetailScreen')
@@ -33,6 +34,7 @@ const MovieDetailScreen: React.FC<PropsMovieDetailNavigator> = (props: PropsMovi
     const [topContainerSeason2, setTopContainerSeason2] = React.useState(0)
     const [finalPositionsYSeasons, setFinalPositionsYSeasons] = React.useState<number[]>([])
     const [expandIndexSeason, setExpandIndexSeason] = React.useState(-1)
+    const [playerUrl, setPlayerUrl] = React.useState("")
 
     const scrollYAnimatedValue = React.useRef(new Animated.Value(0)).current
 
@@ -56,6 +58,23 @@ const MovieDetailScreen: React.FC<PropsMovieDetailNavigator> = (props: PropsMovi
     }, [movie])
 
     let displayedHeaderTitle = false
+
+    const onPressBackpage = React.useCallback(() => {
+        props.navigation.goBack()
+    }, [movie])
+
+    React.useEffect(() => {
+        const callback = (e: any) => {
+            setPlayerUrl("")
+            e.preventDefault()
+        }
+
+        props.navigation.removeListener("beforeRemove", callback)
+
+        if (playerUrl.length) {
+            props.navigation.addListener("beforeRemove", callback)
+        }
+    }, [playerUrl.length])
 
     React.useEffect(() => {
         if (expandIndexSeason !== -1) {
@@ -102,10 +121,6 @@ const MovieDetailScreen: React.FC<PropsMovieDetailNavigator> = (props: PropsMovi
         scrollYAnimatedValue.setValue(scrollY)
     }, [movie, foregroundViewRef, headerTitleRef])
 
-    const onPressBackpage = React.useCallback(() => {
-        props.navigation.goBack()
-    }, [movie])
-
     const isSerie = (): boolean => {
         if (movie.seasons?.length) {
             return true
@@ -121,9 +136,7 @@ const MovieDetailScreen: React.FC<PropsMovieDetailNavigator> = (props: PropsMovi
     }
 
     const onPressEpisode = React.useCallback((episode: IEpisode): void => {
-        console.log('# Episódio pressionado');
-        console.log("# Tela movie Detail");
-        console.log(episode);
+        setPlayerUrl(episode.uriVideo)
     }, [movie])
 
     const renderSeasons = React.useCallback(() => {
@@ -156,6 +169,12 @@ const MovieDetailScreen: React.FC<PropsMovieDetailNavigator> = (props: PropsMovi
 
     return (
         <View style={styles.container}>
+            {
+                playerUrl.length ? (
+                    <VideoPlayerControll uri={playerUrl} />
+                ) : null
+            }
+
             <ScrollViewImageHeader
                 uriImage={movie.uriImage}
                 heightInterpolation={headerHeightAnimation}
@@ -169,7 +188,9 @@ const MovieDetailScreen: React.FC<PropsMovieDetailNavigator> = (props: PropsMovi
 
                     <ButtonIcon
                         onPress={() => {
-                            console.log('# Execute player');
+                            if (movie.uriVideo) {
+                                setPlayerUrl(movie.uriVideo)
+                            }
                         }}
                         icon={{
                             name: 'play-circle',
@@ -185,12 +206,7 @@ const MovieDetailScreen: React.FC<PropsMovieDetailNavigator> = (props: PropsMovi
                         <LinearGradient
                             start={{ y: 0, x: 0 }}
                             end={{ y: 1, x: 0 }}
-                            style={{
-                                position: "absolute",
-                                width: '100%',
-                                height: '100%',
-                                opacity: 0.5,
-                            }}
+                            style={styles.opacityBackgroundNameHeader}
                             colors={[colors.black, 'transparent']}
                         />
 

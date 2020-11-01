@@ -1,0 +1,243 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.filmsstreamreactnative"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="29" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:3:3-75
+11-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:3:20-73
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:2:3-64
+12-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:2:20-62
+13    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+13-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:4:3-72
+13-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:4:20-70
+14    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+14-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:5:3-71
+14-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:5:20-69
+15    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+15-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:6:3-69
+15-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:6:20-67
+16    <uses-permission android:name="android.permission.VIBRATE" />
+16-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:7:3-63
+16-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:7:20-61
+17    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+17-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:8:3-77
+17-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:8:20-75
+18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+18-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:9:3-78
+18-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:9:20-76
+19    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+19-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:10:3-76
+19-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:10:20-74
+20    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+20-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:11:3-82
+20-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:11:20-80
+21    <uses-permission android:name="android.permission.CAMERA" />
+21-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:12:3-62
+21-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:12:20-60
+22    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+22-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:13:3-68
+22-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:13:20-66
+23    <uses-permission android:name="android.permission.READ_CONTACTS" />
+23-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:14:3-69
+23-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:14:20-67
+24    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+24-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:15:3-70
+24-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:15:20-68
+25    <uses-permission android:name="android.permission.READ_CALENDAR" />
+25-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:16:3-69
+25-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:16:20-67
+26    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+26-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:17:3-70
+26-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:17:20-68
+27    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+27-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:18:3-77
+27-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:18:20-75
+28    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+28-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:19:3-78
+28-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:19:20-76
+29    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+29-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:20:3-70
+29-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:20:20-68
+30    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+30-->[com.facebook.flipper:flipper:0.54.0] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\1c7787ec82631e0394972c76bdabe608\flipper-0.54.0\AndroidManifest.xml:16:5-76
+30-->[com.facebook.flipper:flipper:0.54.0] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\1c7787ec82631e0394972c76bdabe608\flipper-0.54.0\AndroidManifest.xml:16:22-73
+31    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+31-->[:expo-updates] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-updates\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-79
+31-->[:expo-updates] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-updates\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:22-76
+32    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+32-->[:expo-location] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-77
+32-->[:expo-location] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:22-74
+33    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+33-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:15:5-98
+33-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:15:22-95
+34    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+34-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:16:5-94
+34-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:16:22-91
+35
+36    <application
+36-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:21:3-37:17
+37        android:name="com.filmsstreamreactnative.MainApplication"
+37-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:21:16-47
+38        android:allowBackup="false"
+38-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:21:162-189
+39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+39-->[androidx.core:core:1.1.0] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\639e914bfc1efa21e36199d3ff2c5eef\core-1.1.0\AndroidManifest.xml:24:18-86
+40        android:debuggable="true"
+41        android:icon="@mipmap/ic_launcher"
+41-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:21:81-115
+42        android:label="@string/app_name"
+42-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:21:48-80
+43        android:roundIcon="@mipmap/ic_launcher_round"
+43-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:21:116-161
+44        android:theme="@style/AppTheme"
+44-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:21:190-221
+45        android:usesCleartextTraffic="true" >
+45-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\debug\AndroidManifest.xml:6:18-53
+46        <meta-data
+46-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:22:5-140
+47            android:name="expo.modules.updates.EXPO_UPDATE_URL"
+47-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:22:16-67
+48            android:value="https://exp.host/@fmpereira/films-stream-react-native" />
+48-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:22:68-137
+49        <meta-data
+49-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:23:5-94
+50            android:name="expo.modules.updates.EXPO_SDK_VERSION"
+50-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:23:16-68
+51            android:value="39.0.0" />
+51-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:23:69-91
+52        <meta-data
+52-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:24:5-82
+53            android:name="expo.modules.updates.ENABLED"
+53-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:24:16-59
+54            android:value="true" />
+54-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:24:60-80
+55        <meta-data
+55-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:25:5-105
+56            android:name="expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH"
+56-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:25:16-80
+57            android:value="ALWAYS" />
+57-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:25:81-103
+58        <meta-data
+58-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:26:5-99
+59            android:name="expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS"
+59-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:26:16-79
+60            android:value="0" />
+60-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:26:80-97
+61        <meta-data
+61-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:27:5-99
+62            android:name="expo.modules.updates.EXPO_RELEASE_CHANNEL"
+62-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:27:16-72
+63            android:value="default" />
+63-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:27:73-96
+64
+65        <activity
+65-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:29:3-35:16
+66            android:name="com.filmsstreamreactnative.MainActivity"
+66-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:30:5-33
+67            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+67-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:30:67-144
+68            android:label="@string/app_name"
+68-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:30:34-66
+69            android:launchMode="singleTask"
+69-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:30:145-176
+70            android:theme="@style/Theme.App.SplashScreen"
+70-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:30:220-265
+71            android:windowSoftInputMode="adjustResize" >
+71-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:30:177-219
+72            <intent-filter>
+72-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:31:7-34:23
+73                <action android:name="android.intent.action.MAIN" />
+73-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:32:9-60
+73-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:32:17-58
+74
+75                <category android:name="android.intent.category.LAUNCHER" />
+75-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:33:9-68
+75-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:33:19-66
+76            </intent-filter>
+77        </activity>
+78        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+78-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:36:5-81
+78-->C:\Users\Filipe\Documents\films-stream-react-native\android\app\src\main\AndroidManifest.xml:36:15-79
+79
+80        <meta-data
+80-->[:unimodules-react-native-adapter] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\@unimodules\react-native-adapter\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-14:91
+81            android:name="org.unimodules.core.AppLoader#react-native-headless"
+81-->[:unimodules-react-native-adapter] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\@unimodules\react-native-adapter\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-79
+82            android:value="org.unimodules.adapters.react.apploader.RNHeadlessAppLoader" />
+82-->[:unimodules-react-native-adapter] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\@unimodules\react-native-adapter\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-88
+83
+84        <provider
+84-->[:expo-file-system] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:9-26:20
+85            android:name="expo.modules.filesystem.FileSystemFileProvider"
+85-->[:expo-file-system] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:13-74
+86            android:authorities="com.filmsstreamreactnative.FileSystemFileProvider"
+86-->[:expo-file-system] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-74
+87            android:exported="false"
+87-->[:expo-file-system] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:13-37
+88            android:grantUriPermissions="true" >
+88-->[:expo-file-system] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:13-47
+89            <meta-data
+89-->[:expo-file-system] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:13-25:70
+90                android:name="android.support.FILE_PROVIDER_PATHS"
+90-->[:expo-file-system] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-67
+91                android:resource="@xml/file_system_provider_paths" />
+91-->[:expo-file-system] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:17-67
+92        </provider>
+93
+94        <service
+94-->[:expo-location] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:9-19:40
+95            android:name="expo.modules.location.services.LocationTaskService"
+95-->[:expo-location] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:13-78
+96            android:exported="false" />
+96-->[:expo-location] C:\Users\Filipe\Documents\films-stream-react-native\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-37
+97
+98        <activity
+98-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\b380a6680b39aaba642b57aa9f5fdeac\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+99            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+99-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\b380a6680b39aaba642b57aa9f5fdeac\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+100            android:exported="false"
+100-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\b380a6680b39aaba642b57aa9f5fdeac\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+101            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+101-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\b380a6680b39aaba642b57aa9f5fdeac\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+102
+103        <meta-data
+103-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\d013aa8d0c5b87c18960c743ac76de6f\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
+104            android:name="com.google.android.gms.version"
+104-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\d013aa8d0c5b87c18960c743ac76de6f\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
+105            android:value="@integer/google_play_services_version" />
+105-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\d013aa8d0c5b87c18960c743ac76de6f\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
+106
+107        <service
+107-->[androidx.room:room-runtime:2.1.0] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\5f7132f69994fe4e2c8f322e81b3f8c9\room-runtime-2.1.0\AndroidManifest.xml:25:9-27:40
+108            android:name="androidx.room.MultiInstanceInvalidationService"
+108-->[androidx.room:room-runtime:2.1.0] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\5f7132f69994fe4e2c8f322e81b3f8c9\room-runtime-2.1.0\AndroidManifest.xml:26:13-74
+109            android:exported="false" />
+109-->[androidx.room:room-runtime:2.1.0] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\5f7132f69994fe4e2c8f322e81b3f8c9\room-runtime-2.1.0\AndroidManifest.xml:27:13-37
+110        <service
+110-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:19:9-21:40
+111            android:name="io.nlopez.smartlocation.activity.providers.ActivityGooglePlayServicesProvider$ActivityRecognitionService"
+111-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:20:13-132
+112            android:exported="false" />
+112-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:21:13-37
+113        <service
+113-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:22:9-24:40
+114            android:name="io.nlopez.smartlocation.geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService"
+114-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:23:13-127
+115            android:exported="false" />
+115-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:24:13-37
+116        <service
+116-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:25:9-27:40
+117            android:name="io.nlopez.smartlocation.geocoding.providers.AndroidGeocodingProvider$AndroidGeocodingService"
+117-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:26:13-120
+118            android:exported="false" />
+118-->[io.nlopez.smartlocation:library:3.2.11] C:\Users\Filipe\.gradle\caches\transforms-2\files-2.1\275d6487b388b9aabd0d8df5b1019b15\jetified-library-3.2.11\AndroidManifest.xml:27:13-37
+119    </application>
+120
+121</manifest>
