@@ -66,7 +66,19 @@ buck-out
 .gradle
 local.properties
 *.iml
-/android/
+*.apk
+/android/**/build
+/android/**/local.properties
+/android/captures
+/android/expoview/libs/ReactAndroid-temp
+/android/versioned-react-native/ReactAndroid
+/android/expoview/src/main/java/host/exp/exponent/generated/ExponentBuildConstants.java
+/android/app/src/androidTest/java/host/exp/exponent/generated/TestBuildConstants.java
+/android/app/src/main/AndroidManifest.xml
+/android/app/google-services.json
+/android/expoview/src/main/java/host/exp/exponent/generated/ExponentKeys.java
+/android/app/fabric.properties
+ReactAndroid-temp.aar
 
 # Node
 node_modules
