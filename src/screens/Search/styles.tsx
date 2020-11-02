@@ -7,7 +7,4 @@ export const styles = StyleSheet.create({
         position: "relative",
         backgroundColor: colors.white,
     },
-    safeAreaView: {
-        flex: 1,
-    },
 })

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ListRenderItemInfo, View, VirtualizedList } from 'react-native'
+import { ListRenderItemInfo, NativeScrollEvent, NativeSyntheticEvent, View, VirtualizedList } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { connect, ConnectedProps } from 'react-redux'
 import CardMovieDetail from '../../components/CardMovieDetail'
@@ -11,6 +11,7 @@ import { IMovieItem } from '../../services/movie/types'
 import { PropsSearchsNavigator } from '../../routes/stack-types'
 import PreviousResultSearch from '../../components/PreviousResultSearch'
 import { IItemResult } from '../../components/PreviousResultSearch/types'
+import VirtualPagination from '../../components/VirtualPagination'
 
 interface PropsScreen extends PropsSearchsNavigator, PropsFromRedux { }
 
@@ -74,6 +75,8 @@ const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
         return index.toString()
     }, [props.movies])
 
+    let maxAjax = 4
+
     return (
         <View style={styles.container}>
             <HeaderSearch onChangeText={onChangeText} onPressBackPage={onPressBackPage} />
@@ -88,22 +91,61 @@ const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
                 ) : null
             }
 
-            <SafeAreaView
-                style={[
-                    styles.safeAreaView,
-                    { display: showPreviousSearch ? "none" : "flex" },
-                ]}
-            >
-                <VirtualizedList
-                    data={props.movies}
-                    initialNumToRender={10}
-                    windowSize={10}
-                    renderItem={renderItem}
-                    keyExtractor={keyExtractor}
-                    getItemCount={getItemCount}
-                    getItem={getItem}
-                />
-            </SafeAreaView>
+            {
+                !showPreviousSearch ? (
+                    <VirtualPagination
+                        numToRende={20}
+                        windowSize={20}
+                        getData={(currentPage: number): Promise<any[]> => {
+                            console.log('# AJAX: Realizando uma busca');
+
+                            return new Promise((resolve, reject) => {
+                                setTimeout(() => {
+                                    console.log('# AJAX: Busca Finalizada')
+
+                                    if (props.movies.length && maxAjax) {
+                                        resolve([
+                                            <CardMovieDetail
+                                                onPress={onPressCardMovie}
+                                                movie={{ ...props.movies[0] }}
+                                            />,
+                                            <CardMovieDetail
+                                                onPress={onPressCardMovie}
+                                                movie={{ ...props.movies[1] }}
+                                            />,
+                                            <CardMovieDetail
+                                                onPress={onPressCardMovie}
+                                                movie={{ ...props.movies[2] }}
+                                            />,
+                                            <CardMovieDetail
+                                                onPress={onPressCardMovie}
+                                                movie={{ ...props.movies[3] }}
+                                            />,
+                                            <CardMovieDetail
+                                                onPress={onPressCardMovie}
+                                                movie={{ ...props.movies[4] }}
+                                            />,
+                                        ])
+
+                                        maxAjax -= 1
+                                    } else {
+                                        resolve([])
+                                    }
+                                }, 4000)
+                            })
+                        }}
+                    />
+                    /* <VirtualizedList
+                        data={props.movies}
+                        initialNumToRender={10}
+                        windowSize={10}
+                        renderItem={renderItem}
+                        keyExtractor={keyExtractor}
+                        getItemCount={getItemCount}
+                        getItem={getItem}
+                    /> */
+                ) : null
+            }
         </View>
     )
 }

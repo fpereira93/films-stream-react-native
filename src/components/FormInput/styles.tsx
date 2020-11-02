@@ -13,6 +13,8 @@ export default StyleSheet.create({
         borderRadius: 2,
         paddingLeft: 8,
         fontSize: 16,
+        paddingTop: 0,
+        paddingBottom: 0,
     },
     iconClear: {
         paddingRight: 7,
