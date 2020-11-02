@@ -1,7 +1,0 @@
-#Mon Nov 02 11:36:46 BRT 2020
-base.0=C\:\\Users\\Filipe\\Documents\\films-stream-react-native\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out\\classes.dex
-path.1=classes2.dex
-renamed.1=classes2.dex
-path.0=classes.dex
-renamed.0=classes.dex
-base.1=C\:\\Users\\Filipe\\Documents\\films-stream-react-native\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out\\classes2.dex
