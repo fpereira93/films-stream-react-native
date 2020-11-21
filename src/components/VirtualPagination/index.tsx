@@ -49,7 +49,7 @@ const VirtualPagination: React.FC<IVirtualPaginationParams> = (params: IVirtualP
         <SafeAreaView style={styles.container}>
             <VirtualizedList
                 data={dataConcated}
-                initialnumToRenderr={params.numToRender ?? 10}
+                initialNumToRender={params.numToRender ?? 10}
                 windowSize={params.windowSize ?? 5}
                 renderItem={renderResult}
                 keyExtractor={keyExtractor}

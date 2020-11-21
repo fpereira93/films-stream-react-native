@@ -89,7 +89,7 @@ const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
 
         return (
             <VirtualPagination
-                numToRende={20}
+                numToRender={20}
                 windowSize={20}
                 getData={(currentPage: number): Promise<any[]> => {
                     console.log(`# AJAX: Realizando uma busca | page ${currentPage}`);
@@ -99,28 +99,14 @@ const SearchScreen: React.FC<PropsScreen> = (props: PropsScreen) => {
                             console.log('# AJAX: Busca Finalizada')
 
                             if (props.movies.length && maxAjax) {
-                                resolve([
-                                    <CardMovieDetail
-                                        onPress={onPressCardMovie}
-                                        movie={{ ...props.movies[0] }}
-                                    />,
-                                    <CardMovieDetail
-                                        onPress={onPressCardMovie}
-                                        movie={{ ...props.movies[1] }}
-                                    />,
-                                    <CardMovieDetail
-                                        onPress={onPressCardMovie}
-                                        movie={{ ...props.movies[2] }}
-                                    />,
-                                    <CardMovieDetail
-                                        onPress={onPressCardMovie}
-                                        movie={{ ...props.movies[3] }}
-                                    />,
-                                    <CardMovieDetail
-                                        onPress={onPressCardMovie}
-                                        movie={{ ...props.movies[4] }}
-                                    />,
-                                ])
+                                resolve(
+                                    props.movies.map((movie: any) => (
+                                        <CardMovieDetail
+                                            onPress={onPressCardMovie}
+                                            movie={{ ...movie }}
+                                        />
+                                    )),
+                                )
 
                                 maxAjax -= 1
                             } else {

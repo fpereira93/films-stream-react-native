@@ -17,7 +17,13 @@ export default StyleSheet.create({
         borderTopRightRadius: valueRadius,
     },
     image: {
-        borderTopLeftRadius: valueRadius,
+        position: "relative",
+        alignSelf: "center",
+        zIndex: 0,
+        // borderTopLeftRadius: valueRadius,
+        // flex: 1,
+        // height: undefined,
+        // width: undefined,
     },
     imageBottomRadius: {
         borderBottomLeftRadius: valueRadius,

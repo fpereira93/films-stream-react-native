@@ -87,7 +87,7 @@ const PreviousResultSearch: React.FC<IPreviousResultSearchParams> = (props: IPre
         return (
             <VirtualizedList
                 data={props.results}
-                initialnumToRenderr={20}
+                initialNumToRender={20}
                 windowSize={5}
                 renderItem={renderResult}
                 keyExtractor={keyExtractor}
