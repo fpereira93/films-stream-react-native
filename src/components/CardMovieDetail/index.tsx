@@ -94,8 +94,6 @@ const CardMovieDetail: React.FC<ICardMovieDetailParams> = (params: ICardMovieDet
                 <View style={styles.details}>
                     <Text style={styles.title}>
                         {params.movie.title}
-
-                        { params.movie.uriImage }
                     </Text>
 
                     {
