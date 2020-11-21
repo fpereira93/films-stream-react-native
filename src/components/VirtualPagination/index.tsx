@@ -1,6 +1,8 @@
 import * as React from 'react'
-import { ActivityIndicator, ListRenderItemInfo, NativeScrollEvent, NativeSyntheticEvent, VirtualizedList } from 'react-native'
+import { ActivityIndicator, ListRenderItemInfo, NativeScrollEvent, NativeSyntheticEvent, View, VirtualizedList } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { LinearGradient } from 'expo-linear-gradient'
 import { colors } from '../../constants/colors';
 import styles from './styles';
 import { IVirtualPaginationParams } from './types';
@@ -47,7 +49,7 @@ const VirtualPagination: React.FC<IVirtualPaginationParams> = (params: IVirtualP
         <SafeAreaView style={styles.container}>
             <VirtualizedList
                 data={dataConcated}
-                initialNumToRender={params.numToRende ?? 10}
+                initialnumToRenderr={params.numToRender ?? 10}
                 windowSize={params.windowSize ?? 5}
                 renderItem={renderResult}
                 keyExtractor={keyExtractor}
@@ -66,7 +68,21 @@ const VirtualPagination: React.FC<IVirtualPaginationParams> = (params: IVirtualP
 
             {
                 searchInProgress ? (
-                    <ActivityIndicator style={styles.containerActivityIndicator} size="large" color={colors.main_color} />
+                    <LinearGradient
+                        start={{ x: 1, y: 1 }}
+                        end={{ x: 1, y: 0 }}
+                        style={[
+                            styles.linearGradientLoading,
+                            dataConcated.length > 0 ? { bottom: 0 } : null,
+                        ]}
+                        colors={[colors.white, 'transparent']}
+                    >
+                        <ActivityIndicator
+                            style={styles.activityIndicator}
+                            size="large"
+                            color={colors.main_color}
+                        />
+                    </LinearGradient>
                 ) : null
             }
         </SafeAreaView>

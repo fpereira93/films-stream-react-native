@@ -7,4 +7,12 @@ export const styles = StyleSheet.create({
         position: "relative",
         backgroundColor: colors.white,
     },
+    wrapperActivityIndicator: {
+        flex: 1,
+        justifyContent: "center",
+    },
+    activityIndicator: {
+        width: "100%",
+        zIndex: 1,
+    },
 })

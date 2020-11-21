@@ -94,6 +94,8 @@ const CardMovieDetail: React.FC<ICardMovieDetailParams> = (params: ICardMovieDet
                 <View style={styles.details}>
                     <Text style={styles.title}>
                         {params.movie.title}
+
+                        { params.movie.uriImage }
                     </Text>
 
                     {
@@ -114,9 +116,13 @@ const CardMovieDetail: React.FC<ICardMovieDetailParams> = (params: ICardMovieDet
                         ) : null
                     }
 
-                    <Text style={styles.genres}>
-                        {params.movie.genres.join(', ')}
-                    </Text>
+                    {
+                        params.movie.genres ? (
+                            <Text style={styles.genres}>
+                                {params.movie.genres.join(', ')}
+                            </Text>
+                        ) : null
+                    }
 
                     <View style={styles.containerFeedback}>
                         <StarRating

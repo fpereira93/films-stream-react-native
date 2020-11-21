@@ -1,19 +1,24 @@
 import { StyleSheet } from "react-native"
-import { colors } from "../../constants/colors"
+
+const valueRadius = 5
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    containerActivityIndicator: {
-        width: "100%",
-        alignSelf: "center",
         justifyContent: "center",
+    },
+    linearGradientLoading: {
         position: "absolute",
-        bottom: 0,
+        justifyContent: "center",
+        width: '100%',
+        height: '15%',
         zIndex: 1,
-        height: 50,
-        backgroundColor: colors.white,
+        borderBottomLeftRadius: valueRadius,
+        borderBottomRightRadius: valueRadius,
+    },
+    activityIndicator: {
+        width: "100%",
+        zIndex: 1,
     },
 })
 

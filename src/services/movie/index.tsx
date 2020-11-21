@@ -96,7 +96,9 @@ const results: Array<IMovieItem> = getMovies();
 export const searchMoviesService = (query: string): Promise<ResultSearchMovies> => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(results.filter((movie: IMovieItem) => movie.title.indexOf(query) > -1))
+            resolve(results.filter((movie: IMovieItem) => {
+                return movie.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) > -1
+            }))
             // resolve([results[0], results[1]])
         }, 2000)
     })

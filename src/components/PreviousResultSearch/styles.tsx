@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: '100%',
+        justifyContent: "center",
         backgroundColor: colors.white,
     },
     containerLine: {
@@ -34,12 +35,18 @@ const styles = StyleSheet.create({
         transform: [{ rotate: '45deg' }],
         marginLeft: 15,
     },
-    noResults: {
+    iconSad: {
+        alignSelf: "center",
+    },
+    noResultsText: {
         margin: 10,
-        color: colors.black,
+        color: colors.medium_gray,
         fontFamily: 'Montserrat-Medium',
-        fontSize: fontSizeResponsive(2),
+        fontSize: fontSizeResponsive(3.2),
         textAlign: "center",
+    },
+    iconCloudSearch: {
+        alignSelf: "center",
     },
 })
 
