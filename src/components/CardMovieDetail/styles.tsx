@@ -20,10 +20,6 @@ export default StyleSheet.create({
         position: "relative",
         alignSelf: "center",
         zIndex: 0,
-        // borderTopLeftRadius: valueRadius,
-        // flex: 1,
-        // height: undefined,
-        // width: undefined,
     },
     imageBottomRadius: {
         borderBottomLeftRadius: valueRadius,

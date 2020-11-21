@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { ActivityIndicator, ListRenderItemInfo, NativeScrollEvent, NativeSyntheticEvent, View, VirtualizedList } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { LinearGradient } from 'expo-linear-gradient'
 import { colors } from '../../constants/colors';
@@ -46,7 +45,7 @@ const VirtualPagination: React.FC<IVirtualPaginationParams> = (params: IVirtualP
     }
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <VirtualizedList
                 data={dataConcated}
                 initialNumToRender={params.numToRender ?? 10}
@@ -85,7 +84,7 @@ const VirtualPagination: React.FC<IVirtualPaginationParams> = (params: IVirtualP
                     </LinearGradient>
                 ) : null
             }
-        </SafeAreaView>
+        </View>
     )
 }
 
